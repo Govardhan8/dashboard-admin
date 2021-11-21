@@ -1,0 +1,64 @@
+.graphContainer {
+	background-color: whitesmoke;
+	display: flex;
+	flex-direction: column;
+	column-gap: 1rem;
+	transition: width 0.25s ease-out;
+}
+.graphContainer p {
+	background-color: #f8f9fc;
+	display: flex;
+	padding: 1rem 0.5rem;
+	border: 1px solid rgba(211, 211, 211, 0.5);
+}
+.graphContainer span {
+	padding: 0 1rem;
+	font-size: 1rem;
+	color: #4e73df;
+	font-weight: bold;
+}
+.verticon {
+	margin-left: auto;
+}
+.graphContainer canvas {
+	background-color: white;
+}
+.line > canvas {
+	padding: 1.25rem;
+	max-height: 15rem;
+}
+.pie > canvas {
+	padding: 1.25rem;
+	max-height: 17.5rem;
+}
+.graph {
+	z-index: 1;
+}
+.graph2 {
+	margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+	.line > canvas {
+		max-height: 22.5rem;
+	}
+	.pie > canvas {
+		min-height: 22.5rem;
+	}
+}
+@media (min-width: 990px) {
+	.graphContainer {
+		flex-direction: row;
+	}
+	.graph1 {
+		width: 65%;
+	}
+	.graph2 {
+		width: 35%;
+		margin-top: 0;
+	}
+
+	.line > canvas,
+	.pie > canvas {
+		min-height: 22.5rem;
+	}
+}

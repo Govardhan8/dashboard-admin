@@ -1,0 +1,208 @@
+.navbar {
+	width: 100%;
+	justify-content: space-between;
+	height: 4rem;
+	border-bottom: 1px solid lightgray;
+	padding-inline: 1rem;
+	align-items: center;
+	overflow-x: hidden;
+}
+.container {
+	gap: 0.25rem;
+	align-items: center;
+}
+.button {
+	width: 2rem;
+}
+.profilePopup {
+	position: absolute;
+	border: 1px solid lightgrey;
+	width: 200px;
+	top: 3.5rem;
+	right: 1rem;
+	z-index: 100;
+	background: white;
+}
+.profilePopup p {
+	display: flex;
+	align-items: center;
+	padding: 0.75rem;
+	gap: 0.75rem;
+}
+.profilePopup p:last-child {
+	border-top: 1px solid darkgray;
+}
+.profilePopup p svg {
+	color: darkgray;
+}
+
+.popup {
+	position: absolute;
+	border: 1px solid lightgrey;
+	width: 80%;
+	max-width: 400px;
+	top: 3.5rem;
+	left: 15%;
+	z-index: 100;
+	background: white;
+	border-radius: 1rem;
+	overflow: hidden;
+	transition: all 0.2s ease-in;
+}
+.popup h3 {
+	background-color: #4e73df;
+	padding: 0.5rem 1rem;
+	color: white;
+	font-size: 1rem;
+	font-weight: 400;
+}
+.popup .row {
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+}
+.row svg {
+	color: white;
+	height: 3rem;
+	width: 3rem;
+	padding: 0.5rem;
+	border-radius: 50%;
+	margin-right: 0.75rem;
+}
+.row span {
+	color: darkgray;
+	font-size: 0.9rem;
+}
+.row .image {
+	position: relative;
+	margin-right: 1.25rem;
+}
+.row .image:before {
+	content: '';
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: green;
+}
+.menu:focus {
+	background-color: lightgray;
+	border: 2.5px solid rgb(90, 137, 175);
+}
+.badge span {
+	top: 5px;
+	left: 3px;
+	font-size: 0.5rem;
+	height: 0.75rem;
+	width: 100%;
+	z-index: 10;
+	border-radius: 0.25rem;
+}
+.icon:hover {
+	filter: contrast(50%);
+}
+.searchBox {
+	align-items: center;
+	height: 3rem;
+	border: 5px solid white;
+	padding: 0.75rem 0;
+	background-color: whitesmoke;
+}
+
+.searchBox input {
+	height: 100%;
+	border: none;
+	outline: none;
+	border-radius: 0.5rem 0 0 0.5rem;
+	background: whitesmoke;
+}
+.imageContainer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.navbar .image {
+	width: 35px;
+	align-self: center;
+}
+@media (max-width: 576px) {
+	.search {
+		display: none;
+	}
+	.switch {
+		display: none;
+	}
+	.searchBox {
+		position: absolute;
+		top: 3rem;
+		left: 1.5rem;
+		right: 1.5rem;
+		z-index: 1000;
+		border: 5px solid white;
+		width: 90%;
+		justify-content: space-between;
+		box-shadow: 0 0 0 1px whitesmoke;
+	}
+	.searchBox input {
+		height: 100%;
+		width: 100%;
+		border: none;
+		padding-left: 0.5rem;
+		font-size: 0.75rem;
+	}
+}
+@media (min-width: 576px) {
+	.popup {
+		left: 40%;
+	}
+	.searchBox {
+		position: static;
+		border: 5px solid white;
+		width: 100%;
+		justify-content: space-between;
+		box-shadow: none;
+	}
+	.searchBox input {
+		height: 100%;
+		min-width: 40vw;
+		width: 100%;
+		border: none;
+		padding-left: 0.5rem;
+		font-size: 0.75rem;
+	}
+	.container {
+		gap: 0.75rem;
+	}
+	.imageContainer {
+		width: 4rem;
+		position: relative;
+	}
+
+	.imageContainer:after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		left: 0;
+		width: 1px;
+		background-color: lightgray;
+	}
+}
+@media (min-width: 990px) {
+	.imageContainer {
+		width: 12rem;
+	}
+	.imageContainer:before {
+		content: 'Douglas McGee';
+		position: absolute;
+		height: 100%;
+		left: 1rem;
+		top: 0.25rem;
+		width: 8rem;
+		color: darkgray;
+	}
+	.popup {
+		left: 50%;
+	}
+}
