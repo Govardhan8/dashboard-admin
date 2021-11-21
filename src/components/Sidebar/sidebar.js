@@ -14,7 +14,7 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 		display: 'flex',
 		flexDirection: openMenu ? 'row' : 'column',
 		width: openMenu ? '14rem' : '7rem',
-		gap: '1rem',
+		gap: openMenu ? '1rem' : '0.25rem',
 		alignItems: 'center',
 	}
 
@@ -89,7 +89,7 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 							display: 'flex',
 							flexDirection: openMenu ? 'row' : 'column',
 							alignItems: 'center',
-							gap: '1rem',
+							gap: openMenu ? '1rem' : '0.25rem',
 							width: '100%',
 						}}
 					>
@@ -131,7 +131,7 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 							display: 'flex',
 							flexDirection: openMenu ? 'row' : 'column',
 							alignItems: 'center',
-							gap: '1rem',
+							gap: openMenu ? '1rem' : '0.25rem',
 							width: '100%',
 						}}
 					>

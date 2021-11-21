@@ -1,7 +1,7 @@
 .sidebarContainer {
 	width: 7rem;
 	background: #4e73df;
-	height: 100%;
+	min-height: 100vh;
 	position: fixed;
 }
 .sidebarContainer ul {
