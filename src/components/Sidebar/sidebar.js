@@ -17,7 +17,7 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 		gap: openMenu ? '1rem' : '0.25rem',
 		alignItems: 'center',
 	}
-
+	const [sidePop1, setSidePop1] = useState(false)
 	const [screenSize, getDimension] = useState({
 		dynamicWidth: window.innerWidth,
 		dynamicHeight: window.innerHeight,
@@ -91,6 +91,9 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 							gap: openMenu ? '1rem' : '0.25rem',
 							width: '100%',
 						}}
+						onClick={() => {
+							setSidePop1(false)
+						}}
 					>
 						<SettingsIcon sx={{ color: 'white', fontSize: '1.5rem' }} />
 						<span style={{ textAlign: openMenu ? 'start' : 'center' }}>
@@ -103,6 +106,13 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 							}}
 						/>
 					</div>
+					{sidePop1 && (
+						<div className='sidePop'>
+							<span style={{ color: 'darkgray' }}>custom components</span>
+							<span style={{ color: 'darkgray' }}>Buttons</span>
+							<span style={{ color: 'darkgray' }}>Cards</span>
+						</div>
+					)}
 				</li>
 				<li className='hovered' style={styles}>
 					<BuildIcon sx={{ color: 'white', fontSize: '1.5rem' }} />
