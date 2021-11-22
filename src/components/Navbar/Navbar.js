@@ -19,8 +19,10 @@ import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
 import SettingsInputSvideoRoundedIcon from '@mui/icons-material/SettingsInputSvideoRounded'
 import FormatLineSpacingRoundedIcon from '@mui/icons-material/FormatLineSpacingRounded'
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded'
+import { useHistory } from 'react-router-dom'
 
 const Navbar = ({ open, setOpen, openMenu }) => {
+	const history = useHistory()
 	const [search, setSearch] = useState(false)
 	const [popup, setPopup] = useState(false)
 	const [popup2, setPopup2] = useState(false)
@@ -259,7 +261,11 @@ const Navbar = ({ open, setOpen, openMenu }) => {
 								<FormatLineSpacingRoundedIcon />
 								<span>Activity Log</span>
 							</p>
-							<p>
+							<p
+								onClick={() => {
+									history.push('./login')
+								}}
+							>
 								<LogoutRoundedIcon />
 								<span>Logout</span>
 							</p>
