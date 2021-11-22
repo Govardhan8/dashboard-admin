@@ -43,6 +43,9 @@ const Navbar = ({ open, setOpen, openMenu }) => {
 		if (screenSize.dynamicWidth >= 576) {
 			setSearch(false)
 		}
+		if (screenSize.dynamicWidth > 768) {
+			setOpen(true)
+		}
 
 		return () => {
 			window.removeEventListener('resize', setDimension)
