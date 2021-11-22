@@ -39,8 +39,7 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 		return () => {
 			window.removeEventListener('resize', setDimension)
 		}
-		// eslint-disable-next-line
-	}, [screenSize])
+	}, [screenSize, openMenu, setOpenMenu])
 
 	return (
 		<div
@@ -60,7 +59,7 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 						width: openMenu ? '14rem' : '7rem',
 					}}
 				>
-					<EmojiEmotionsIcon sx={{ color: 'white', fontSize: '2rem' }} />
+					<EmojiEmotionsIcon sx={{ color: 'white', fontSize: '2.25rem' }} />
 					<h2
 						style={{
 							display: openMenu ? 'block' : 'none',

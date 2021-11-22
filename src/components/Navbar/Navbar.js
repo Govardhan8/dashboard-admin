@@ -44,17 +44,10 @@ const Navbar = ({ open, setOpen, openMenu }) => {
 			setSearch(false)
 		}
 
-		if (screenSize.dynamicWidth >= 768) {
-			setOpen(true)
-		} else {
-			setOpen(false)
-		}
-
 		return () => {
 			window.removeEventListener('resize', setDimension)
 		}
-		// eslint-disable-next-line
-	}, [screenSize])
+	}, [screenSize, setOpen])
 
 	return (
 		<nav

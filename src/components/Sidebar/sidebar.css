@@ -1,7 +1,7 @@
 .sidebarContainer {
 	width: 7rem;
 	background: #4e73df;
-	min-height: 100vh;
+	min-height: 150vh;
 	position: fixed;
 }
 .sidebarContainer ul {
@@ -22,7 +22,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 7rem;
-	padding: 1rem;
+	padding: 0.75rem;
 	list-style: none;
 	cursor: pointer;
 }
