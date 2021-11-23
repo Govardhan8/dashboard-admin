@@ -2,7 +2,7 @@ import Tabs from './Tabs/Tabs'
 import Graph from './Graph/Graph'
 import Projects from './Project/Projects'
 import Colors from './Color/Colors'
-import Footer from './Footer/Footer'
+
 import Illustrations from './Details/Illustrations'
 import DevApproach from './Details/DevApproach'
 
@@ -24,7 +24,6 @@ const Dashboard = ({ style }) => {
 						</div>
 					</div>
 				</div>
-				<Footer />
 			</div>
 		</>
 	)

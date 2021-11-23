@@ -8,8 +8,10 @@ import AddchartOutlinedIcon from '@mui/icons-material/AddchartOutlined'
 import TableViewIcon from '@mui/icons-material/TableView'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const Sidebar = ({ openMenu, setOpenMenu }) => {
+	const history = useHistory()
 	const styles = {
 		display: 'flex',
 		flexDirection: openMenu ? 'row' : 'column',
@@ -18,6 +20,8 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 		alignItems: 'center',
 	}
 	const [sidePop1, setSidePop1] = useState(false)
+	const [sidePop2, setSidePop2] = useState(false)
+	const [sidePop3, setSidePop3] = useState(false)
 	const [screenSize, getDimension] = useState({
 		dynamicWidth: window.innerWidth,
 		dynamicHeight: window.innerHeight,
@@ -68,7 +72,13 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 						SB ADMIN <sup>2</sup>{' '}
 					</h2>
 				</li>
-				<li className='group' style={styles}>
+				<li
+					className='group'
+					style={styles}
+					onClick={() => {
+						history.push('/dashboard/')
+					}}
+				>
 					<SpeedIcon sx={{ color: 'white', fontSize: '1.5rem' }} />
 					<span style={{ textAlign: openMenu ? 'start' : 'center' }}>
 						Dashboard
@@ -92,7 +102,9 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 							width: '100%',
 						}}
 						onClick={() => {
-							setSidePop1(false)
+							setSidePop1(!sidePop1)
+							setSidePop2(false)
+							setSidePop3(false)
 						}}
 					>
 						<SettingsIcon sx={{ color: 'white', fontSize: '1.5rem' }} />
@@ -106,15 +118,23 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 							}}
 						/>
 					</div>
-					{sidePop1 && (
-						<div className='sidePop'>
-							<span style={{ color: 'darkgray' }}>custom components</span>
-							<span style={{ color: 'darkgray' }}>Buttons</span>
-							<span style={{ color: 'darkgray' }}>Cards</span>
-						</div>
-					)}
 				</li>
-				<li className='hovered' style={styles}>
+				{sidePop1 && (
+					<div className='sidePop'>
+						<span style={{ color: 'darkgray' }}>CUSTOM COMPONENTS</span>
+						<span style={{ color: 'black' }}>Buttons</span>
+						<span style={{ color: 'black' }}>Cards</span>
+					</div>
+				)}
+				<li
+					className='hovered'
+					style={styles}
+					onClick={() => {
+						setSidePop1(false)
+						setSidePop2(!sidePop2)
+						setSidePop3(false)
+					}}
+				>
 					<BuildIcon sx={{ color: 'white', fontSize: '1.5rem' }} />
 					<span style={{ textAlign: openMenu ? 'start' : 'center' }}>
 						Utilities
@@ -126,6 +146,15 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 						}}
 					/>
 				</li>
+				{sidePop2 && (
+					<div className='sidePop'>
+						<span style={{ color: 'darkgray' }}>CUSTOM UTILITIES:</span>
+						<span style={{ color: 'black' }}>Colors</span>
+						<span style={{ color: 'black' }}>Borders</span>
+						<span style={{ color: 'black' }}>Animations</span>
+						<span style={{ color: 'black' }}>other</span>
+					</div>
+				)}
 				<li
 					className='group hovered'
 					style={
@@ -143,6 +172,11 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 							gap: openMenu ? '1rem' : '0.25rem',
 							width: '100%',
 						}}
+						onClick={() => {
+							setSidePop1(false)
+							setSidePop2(false)
+							setSidePop3(!sidePop3)
+						}}
 					>
 						<FolderIcon sx={{ color: 'white', fontSize: '1.5rem' }} />
 						<span style={{ textAlign: openMenu ? 'start' : 'center' }}>
@@ -151,10 +185,56 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 						<KeyboardArrowDownIcon
 							sx={{
 								display: openMenu ? 'block' : 'none',
-								transform: 'rotate(-90deg)',
+								transform: sidePop3 ? 'rotate(0deg)' : 'rotate(-90deg)',
 							}}
 						/>
 					</div>
+					{sidePop3 && (
+						<div className='sidePop'>
+							<span style={{ color: 'darkgray' }}>LOGIN SCREENS:</span>
+							<span
+								style={{ color: 'black' }}
+								onClick={() => {
+									history.push('/login')
+								}}
+							>
+								Login
+							</span>
+							<span
+								style={{ color: 'black' }}
+								onClick={() => {
+									history.push('/create')
+								}}
+							>
+								Register
+							</span>
+							<span
+								style={{ color: 'black' }}
+								onClick={() => {
+									history.push('/resetpwd')
+								}}
+							>
+								Forgot Password
+							</span>
+							<span style={{ color: 'darkgray' }}>OTHER PAGES:</span>
+							<span
+								style={{ color: 'black' }}
+								onClick={() => {
+									history.push('/dashboard/404')
+								}}
+							>
+								404 Page
+							</span>
+							<span
+								style={{ color: 'black' }}
+								onClick={() => {
+									history.push('/dashboard/blank')
+								}}
+							>
+								Blank Page
+							</span>
+						</div>
+					)}
 				</li>
 				<li className='hovered' style={styles}>
 					<AddchartOutlinedIcon sx={{ color: 'white', fontSize: '1.5rem' }} />
@@ -184,7 +264,9 @@ const Sidebar = ({ openMenu, setOpenMenu }) => {
 								display: 'none',
 							},
 						}}
-						onClick={() => setOpenMenu(!openMenu)}
+						onClick={() => {
+							setOpenMenu(!openMenu)
+						}}
 					/>
 				</li>
 			</ul>

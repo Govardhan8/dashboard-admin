@@ -1,5 +1,9 @@
-.App-header {
-	width: 100%;
+.App {
+	position: relative;
+}
+.dashContainer {
+	position: relative;
+	z-index: 1;
 }
 .mainContent {
 	display: flex;

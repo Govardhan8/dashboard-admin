@@ -42,16 +42,20 @@
 	top: 2.5rem;
 	right: 1.25rem;
 	width: 20%;
+	min-width: min-content;
 	max-width: 300px;
-	height: 17.5%;
+	height: min-content;
 	font-size: 0.5rem;
-	padding: 0.5rem 0;
+	padding: 0.5rem 0 0.5rem 0;
 	border: 1px solid rgba(211, 211, 211, 0.5);
 	background-color: white;
 }
 .graphPopup span {
 	color: lightgray;
-	padding-left: 0.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.45rem;
+	padding: 0 0.5rem;
 }
 .graphPopup p:not(last-child) {
 	padding-left: 0.5rem;

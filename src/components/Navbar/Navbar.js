@@ -55,10 +55,7 @@ const Navbar = ({ open, setOpen, openMenu }) => {
 	}, [screenSize, setOpen])
 
 	return (
-		<nav
-			className='navbar flex'
-			style={{ marginLeft: open ? (openMenu ? '14rem' : '7rem') : '0' }}
-		>
+		<nav className='navbar flex'>
 			<IconButton
 				className='menu'
 				onClick={() => {

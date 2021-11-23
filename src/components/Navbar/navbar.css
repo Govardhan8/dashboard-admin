@@ -1,6 +1,4 @@
 .navbar {
-	width: 100%;
-	justify-content: space-between;
 	height: 4rem;
 	border-bottom: 1px solid lightgray;
 	padding-inline: 1rem;
@@ -11,6 +9,7 @@
 .container {
 	gap: 0.25rem;
 	align-items: center;
+	margin-left: auto;
 }
 .button {
 	width: 2rem;
@@ -89,8 +88,8 @@
 	background-color: green;
 }
 .menu:focus {
-	background-color: lightgray;
-	border: 2.5px solid rgb(90, 137, 175);
+	background-color: rgb(190, 184, 184);
+	border: 1.5px solid rgb(90, 137, 175);
 }
 .badge span {
 	top: 5px;
