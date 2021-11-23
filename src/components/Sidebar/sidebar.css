@@ -1,7 +1,8 @@
 .sidebarContainer {
 	width: 7rem;
 	background: #4e73df;
-	min-height: 150vh;
+	min-height: 100vh;
+	height: min-content;
 	position: fixed;
 }
 .sidebarContainer ul {
