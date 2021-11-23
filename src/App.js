@@ -27,9 +27,11 @@ function App() {
 		<Router>
 			<div className='App '>
 				<Switch>
+					{/* Redirecting to dashboard page */}
 					<Route exact path='/'>
 						<Redirect to='/dashboard/' />
 					</Route>
+					{/* Dashboard route components */}
 					<Route exact path='/dashboard/*'>
 						<>
 							<section className='App-header flex'>
@@ -44,6 +46,7 @@ function App() {
 								}}
 							>
 								<Navbar
+									// For sidebar navigation
 									open={sideOpen}
 									openMenu={openMenu}
 									setOpen={setSideOpen}
@@ -64,14 +67,21 @@ function App() {
 							</div>
 						</>
 					</Route>
+					{/* Login page */}
 					<Route exact path='/login'>
 						<Login />
 					</Route>
+					{/* Reset password page */}
 					<Route exact path='/resetpwd'>
 						<Password />
 					</Route>
+					{/* Register Account page */}
 					<Route exact path='/create'>
 						<Create />
+					</Route>
+					{/* for Error page */}
+					<Route path='**'>
+						<Redirect to='/dashboard/404' />
 					</Route>
 				</Switch>
 			</div>

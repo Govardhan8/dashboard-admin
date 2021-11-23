@@ -4,6 +4,7 @@ import './colors.css'
 const Colors = () => {
 	return (
 		<div className='colors'>
+			{/* For 8 color palletes */}
 			<ColorBox name='Primary' value='#4e73df' />
 			<ColorBox name='Success' value='#1cc88a' />
 			<ColorBox name='Info' value='#36b9cc' />

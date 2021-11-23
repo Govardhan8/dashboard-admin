@@ -1,3 +1,4 @@
+// For every color pallete
 const ColorBox = ({ name, value }) => {
 	return (
 		<div className='colorBox' style={{ backgroundColor: value }}>
