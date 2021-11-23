@@ -15,9 +15,12 @@ import Password from './components/password'
 import Create from './components/Create'
 import Blank from './components/Blank'
 import NotFound from './components/404Page'
+import Scroll from './components/ScrollTop'
 
 function App() {
+	//For opening sidebar in using menu icon
 	const [sideOpen, setSideOpen] = useState(false)
+	//For opening sidebar using arrow at the bottom
 	const [openMenu, setOpenMenu] = useState(false)
 
 	return (
@@ -56,6 +59,7 @@ function App() {
 										<NotFound />
 									</Route>
 								</Switch>
+								<Scroll />
 								<Footer />
 							</div>
 						</>

@@ -1,0 +1,15 @@
+.scroll {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	background-color: black;
+	opacity: 0.4;
+	height: 2.5rem;
+	width: 2.5rem;
+	z-index: 1000;
+	border-radius: 0.5rem;
+}
+.scroll svg {
+	color: whitesmoke;
+	transform: rotate(180deg);
+}
