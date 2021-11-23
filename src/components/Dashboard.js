@@ -6,10 +6,10 @@ import Colors from './Color/Colors'
 import Illustrations from './Details/Illustrations'
 import DevApproach from './Details/DevApproach'
 
-const Dashboard = ({ style }) => {
+const Dashboard = () => {
 	return (
 		<>
-			<div style={style}>
+			<div>
 				<div className='dashboard'>
 					<Tabs />
 					<Graph />
