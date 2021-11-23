@@ -260,7 +260,7 @@ const Navbar = ({ open, setOpen, openMenu }) => {
 							</p>
 							<p
 								onClick={() => {
-									history.push('./login')
+									history.push('/login')
 								}}
 							>
 								<LogoutRoundedIcon />
